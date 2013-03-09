@@ -1,0 +1,54 @@
+<!doctype html>
+<html> 
+<head>
+    <meta charset = "utf-8">
+    <title>Computer Students Info</title>
+    <link rel="stylesheet" href="css/css.css" >
+</head>
+<body>
+<center>
+<br>
+<article class="box">
+    <span id="div1" style="font-weight:bold; color:white">Computer Students<br><br>
+     <center>Student <span id='c'>0</span> of <span id='m'>0</span></center></span>
+        <table>
+            <tbody>               
+                <tr><td>Major </td><td><input id="field0" readonly size="20"></td></tr> 
+                <tr><td>Home Email </td><td><input id="field3" readonly size="20"></td></tr>
+                <tr><td>School Email &nbsp;&nbsp;</td><td><input id="field4" readonly size="20"></td></tr>
+                <tr><td>Home Phone </td><td><input id="field5" readonly size="20"></td></tr>
+                <tr><td>Cell Phone </td><td><input id="field6" readonly size="20"></td></tr>
+                <tr><td>Work Phone </td><td><input id="field7" readonly size="20"></td></tr>
+                <tr><td>Other Phone </td><td><input id="field8" readonly size="20"></td></tr>
+                <tr><td><strong>First Name</strong> </td><td><input id="field2" readonly size="20"></td></tr>
+                <tr><td><strong>Last Name</strong> </td><td><input id="field1" readonly size="20"></td></tr>
+                <!--
+                <a id="mail" style="visibility: hidden;"></a>                
+                -->
+            </tbody>
+        </table>
+        <br>
+        <img id="rs" src="img/rs.png" width="30" height="30" style="cursor: pointer;">
+         &nbsp;&nbsp;&nbsp;
+        <img id="r" src="img/b.png" width="30" height="30" style="cursor: pointer;">
+        
+        <span style="font-weight:bold; color:white"><strong>
+            <span id='matchIndex' >0</span> of <span id='matchCount' style="color: orange;">0</span>
+            <span>&nbsp;</span>
+            <span id="sp"  >matches</span>
+        </strong></span>
+        
+        <img id="f" src="img/f.png" width="30" height="30" style="cursor: pointer;">
+        &nbsp;&nbsp;&nbsp;
+        <img id="fs" src="img/fs.png" width="30" height="30" style="cursor: pointer;">
+    <strong>
+    <br><span style="color: white">Search:&nbsp;</span><input id="match" type="text">
+    </strong>
+    <br><br>
+    <button id="btnClear">&nbsp;Clear Search</button>
+</article>
+</center>
+<script src="js/o.js"></script>
+<script src="js/StudentLookup.js"></script>
+</body>
+</html>

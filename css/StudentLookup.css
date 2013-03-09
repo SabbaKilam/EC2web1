@@ -1,0 +1,29 @@
+input{
+    font-weight: bold;
+    background-color: #ccffff;
+}
+
+body{
+    background-color:#eee; 
+    #97ACC4;
+    #ddd;
+}
+
+table{
+    font-weight: bold;
+}
+
+.box{
+    background-color: #eee;
+    #fefefe;
+    margin-top: 5px;
+    #margin-bottom: 50px;
+    #margin-right: 325px;
+    #margin-left: 325px;
+    width: 100%;
+    height: 100%;
+    #349px; 
+    #600px;
+    #border-radius: 10px;
+    #box-shadow: 10px 10px 20px #373737;
+}

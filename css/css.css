@@ -1,0 +1,48 @@
+    input{
+        font-weight: bold;
+        #background-color: #ccffff;
+    }
+    body{
+        background-color: #6F839C;
+        #f0f0f0;
+        #97ABC4;
+    }
+    table{
+        #font-weight: bold;
+        color: white;
+    }
+    fieldset{
+        #font-weight: bold;
+        color: white;    
+    }
+    .box{
+        background-color: #6F839C;
+        #778ba4;
+        #97ABC4;
+        #CFE3FC;
+        #f0f0f0;
+        #margin-top: 15px; 
+        #margin-bottom: 15px;
+        #margin-right: 15px;
+        #margin-left: 15px;
+        width: 100%;
+        height: 100%;      
+        #350px; 
+        #590px;
+        #border-radius: 10px;
+        #box-shadow: 10px 10px 20px #373737;
+    }
+    button {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        display: inline-block; 
+    }
+    img {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        display: inline-block; 
+    }
+    
+    
