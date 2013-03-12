@@ -1,51 +1,104 @@
 <!doctype html>
-<html> 
+<html>
 <head>
-    <meta charset = "utf-8">
-    <title>Computer Students Info</title>
-    <link rel="stylesheet" href="css/css.css" >
+    <meta charset="utf-8">
+    <title id="title">Database Viewer & SQL Tester</title>
+    <link rel="stylesheet" href="css/DbViewer.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="js/DbViewer.js"></script>
 </head>
-<body>
+<body id="body" style="font: 14 pt arial; color:black;" bgcolor="#d5d5d5" >
 <center>
-<br>
 <article class="box">
-    <span id="div1" style="font-weight:bold; color:white">Computer Students<br><br>
-     <center>Student <span id='c'>0</span> of <span id='m'>0</span></center></span>
-        <table>
-            <tbody>               
-                <tr><td>Major </td><td><input id="field0" readonly size="20"></td></tr> 
-                <tr><td>Home Email </td><td><input id="field3" readonly size="20"></td></tr>
-                <tr><td>School Email &nbsp;&nbsp;</td><td><input id="field4" readonly size="20"></td></tr>
-                <tr><td>Home Phone </td><td><input id="field5" readonly size="20"></td></tr>
-                <tr><td>Cell Phone </td><td><input id="field6" readonly size="20"></td></tr>
-                <tr><td>Work Phone </td><td><input id="field7" readonly size="20"></td></tr>
-                <tr><td>Other Phone </td><td><input id="field8" readonly size="20"></td></tr>
-                <tr><td><strong>First Name</strong> </td><td><input id="field2" readonly size="20"></td></tr>
-                <tr><td><strong>Last Name</strong> </td><td><input id="field1" readonly size="20"></td></tr>
-            </tbody>
-        </table>
-        <br>
-        <img id="rs" src="img/rs.png" width="30" height="30" style="cursor: pointer;">
-         &nbsp;&nbsp;&nbsp;
-        <img id="r" src="img/b.png" width="30" height="30" style="cursor: pointer;">
-        
-        <span style="font-weight:bold; color:white"><strong>
-            <span id='matchIndex' >0</span> of <span id='matchCount' style="color: orange;">0</span>
-            <span>&nbsp;</span>
-            <span id="sp"  >matches</span>
-        </strong></span>
-        
-        <img id="f" src="img/f.png" width="30" height="30" style="cursor: pointer;">
-        &nbsp;&nbsp;&nbsp;
-        <img id="fs" src="img/fs.png" width="30" height="30" style="cursor: pointer;">
-    <strong>
-    <br><span style="color: white">Search:&nbsp;</span><input id="match" type="text">
-    </strong>
-    <br><br>
-    <button id="btnClear">&nbsp;Clear Search</button>
+<br>
+<input type="file" id="datapath"><span><img src="graphics\Arrow180.png" height="20" width="20">&nbsp;&nbsp;Get Database File</span>
+<!--
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-->
+<fieldset>
+<legend ><span id="filename">Current File</span></legend>
+<div id="divSelect">
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="captions" >
+            <td><span id="tablecount">Tables:</span></td>
+            <td><span id="recordcount"></span><span id="recordfield"> Records:</span></td>
+        </tr>
+        <tr>
+            <td><div id="divtables"><select id="tablenames" style="width: 150px" ><option>___Choose a Table____</option></select></div></td> 
+            <td><div id="divrecords"><select id="recordnames" style="width: 250px" ><option>&nbsp;&nbsp;&nbsp;___Choose a Record___</option></select></div></td> 
+        </tr>
+    </table>
+</div>
+</fieldset>
+<fieldset>
+<legend id="fieldsLegend" style="font-weight: bold; color:black">Fields:</legend>
+<div id="scrollfields">
+    <table id="tblDisplayFields">
+        <tbody>
+        <tr>
+            <td><input type="radio" id="radio0" name="radioselectedfield" checked="true"></td><td><span id="spanfieldname0" name="chosenfield" style="cursor: pointer">Field 0</span></td><td><input type="text" id="inputfieldvalue0" size="35"></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="radio1" name="radioselectedfield"></td><td><span id="spanfieldname1" name="chosenfield" style="cursor: pointer" >Field 1</span></td><td><input type="text" id="inputfieldvalue1" size="35"></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="radio2" name="radioselectedfield"></td><td><span id="spanfieldname2" name="chosenfield" style="cursor: pointer" >Field 2</span></td><td><input type="text" id="inputfieldvalue2" size="35"></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="radio3" name="radioselectedfield"></td><td><span id="spanfieldname3" name="chosenfield" style="cursor: pointer">Field 3</span></td><td><input type="text" id="inputfieldvalue3" size="35"></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="radio4" name="radioselectedfield"></td><td><span id="spanfieldname4" name="chosenfield" style="cursor: pointer" >Field 4</span></td><td><input type="text" id="inputfieldvalue4" size="35"></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="radio5" name="radioselectedfield"></td><td><span id="spanfieldname5" name="chosenfield" style="cursor: pointer" >Field 5</span></td><td><input type="text" id="inputfieldvalue5" size="35"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</fieldset>
+<fieldset>
+<center>
+    <table id="tblNavigation">
+        <tr>
+        <td><div id="first"><input type="image" src="graphics\control-stop-180.png" id="firstrecord" height="23" width="23"></div></td> 
+        <td><div id="rw"><input type="image" src="graphics\control-double-180.png" id="rewind" height="23" width="23"></div></td> 
+        <td><div id="previous"><input type="image" src="graphics\control-180.png" id="previousrecord" height="23" width="23"></div></td>
+        <td><div style="width:175px; height:27px; overflow: auto"><span id="currentcount" style="visibilty: hidden" ></span></div></td> 
+        <td><div id="next"><input type="image" src="graphics\control.png" id="nextrecord" height="23" width="23"></div></td> 
+        <td><div id="ff"><input type="image" src="graphics\control-double.png" id="fastforward" height="23" width="23"></div></td> 
+        <td><div id="last"><input type="image" src="graphics\control-stop.png" id="lastrecord" height="23" width="23"></div></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+        <td style="visibility: visible"><input type="checkbox" id="casesensitive">Case Sensitive&nbsp;&nbsp;</td>
+        <td><input type="text" id="suggest" size="20"></td>
+        <td style="visibility: hidden"><input type="checkbox">Case Sensitive&nbsp;&nbsp;</td><!-- Just a "miror" for centering -->
+        </tr>
+    </table>
+</center>
+</fieldset>
+    <div id="divSQL">
+     <input type="button" id="sqlbutton" value="Run Query">
+<fieldset>
+    <legend style="font-weight: bold">Query Editor:</legend>
+    <div id="sqldiv"><textarea id="sqltextarea" cols="45" rows="12"></textarea></div>
+</fieldset>
+<fieldset>
+    <Legend style="font-weight: bold">Path to Database File:</legend>
+    <span id="pathname" ></span>
+</fieldset>
+</div>
 </article>
 </center>
 </body>
-<script src="js/o.js"></script>
-<script src="js/StudentLookup.js"></script>
-</html>

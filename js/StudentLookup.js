@@ -29,8 +29,12 @@ forAll( actionFields, function( field ) {
 //=================================================
 var buttons = ["f","r","rs","fs","btnClear"];
 var handlers = [forward,reverse,reverseStop,forwardStop,clearSearch];
-forTwoArrays(buttons, handlers, function(button,handler){
-    objectEventHandler(o(button), "click", handler);
+forTwoArrays(buttons, handlers, function(theButton,aHandler){
+    objectEventHandler(o(theButton), "click", aHandler);
+});
+//=================================================
+objectEventHandler( o("btnSave"), "click", function(){
+	o("btnChoose").click();
 });
 //==============Forward Button Handler=============
 function forward(){
