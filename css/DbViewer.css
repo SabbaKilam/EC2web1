@@ -22,9 +22,12 @@ padding: 10px;
         #margin-bottom: 15px;
         #margin-right: 15px;
         #margin-left: 15px;
-        width: 460px;
+        width: 100%;
+        height: 100%; 
+        #460px;
         #560px;
-        height: 850px;
+
+        #850px;
         #820px;
         border-radius: 5px;
         box-shadow: 5px 5px 10px #373737;
